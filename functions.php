@@ -15,3 +15,13 @@ add_action('wp_enqueue_scripts', function () {
     );
 }, 99);
 
+function rw_fonts() {
+  wp_enqueue_style(
+    'rw-inter',
+    'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap',
+    [],
+    null
+  );
+}
+add_action('wp_enqueue_scripts', 'rw_fonts');
+
