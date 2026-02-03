@@ -21,6 +21,99 @@ Version: 1.0.0
   font-display: swap;
 }
 
+/* =========================================================
+   RHYDYCAR WEST — TYPOGRAPHY OVERRIDES (ANTI-OVERRIDE)
+   Targets real WP + Elementor containers with enough specificity
+   ========================================================= */
+
+:root {
+  --rw-space: 1.25rem;
+  --rw-heading: #202b5d;
+  --rw-body: #4a4a4a;
+}
+
+/* 1) Force body font + base rhythm in content areas */
+.entry-content,
+.page-content,
+.elementor,
+.rw-content {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--rw-body);
+}
+
+/* 2) Paragraphs & lists — theme/elementor commonly override these */
+.entry-content p,
+.page-content p,
+.elementor .elementor-widget-text-editor p,
+.rw-content p,
+.entry-content li,
+.page-content li,
+.elementor li,
+.rw-content li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--rw-body);
+  margin: 0 0 var(--rw-space) 0 !important; /* this is the one that usually gets overridden */
+}
+
+/* 3) Headings — brand font */
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4,
+.page-content h1, .page-content h2, .page-content h3, .page-content h4,
+.elementor h1, .elementor h2, .elementor h3, .elementor h4,
+.rw-content h1, .rw-content h2, .rw-content h3, .rw-content h4 {
+  font-family: 'Rhydycar', 'Helvetica Neue', Arial, sans-serif !important;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--rw-heading);
+  line-height: 1.2;
+}
+
+/* 4) Heading sizes + margins (use !important only where margin gets clobbered) */
+.entry-content h1, .page-content h1, .elementor h1, .rw-content h1 {
+  font-size: 2.6rem;
+  margin: 0 0 calc(var(--rw-space) * 1.5) 0 !important;
+}
+
+.entry-content h2, .page-content h2, .elementor h2, .rw-content h2 {
+  font-size: 2.1rem;
+  margin: calc(var(--rw-space) * 2) 0 var(--rw-space) 0 !important;
+}
+
+.entry-content h3, .page-content h3, .elementor h3, .rw-content h3 {
+  font-size: 1.6rem;
+  margin: calc(var(--rw-space) * 1.75) 0 calc(var(--rw-space) * 0.75) 0 !important;
+}
+
+.entry-content h4, .page-content h4, .elementor h4, .rw-content h4 {
+  font-size: 1.25rem;
+  margin: calc(var(--rw-space) * 1.25) 0 calc(var(--rw-space) * 0.5) 0 !important;
+}
+
+/* 5) Smart tightening */
+.entry-content h1 + p, .page-content h1 + p, .elementor h1 + p, .rw-content h1 + p,
+.entry-content h2 + p, .page-content h2 + p, .elementor h2 + p, .rw-content h2 + p,
+.entry-content h3 + p, .page-content h3 + p, .elementor h3 + p, .rw-content h3 + p {
+  margin-top: 0 !important;
+}
+
+/* 6) Mobile */
+@media (max-width: 768px) {
+  :root { --rw-space: 1rem; }
+
+  .entry-content, .page-content, .elementor, .rw-content {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .entry-content h1, .page-content h1, .elementor h1, .rw-content h1 { font-size: 2rem; }
+  .entry-content h2, .page-content h2, .elementor h2, .rw-content h2 { font-size: 1.6rem; }
+  .entry-content h3, .page-content h3, .elementor h3, .rw-content h3 { font-size: 1.4rem; }
+  .entry-content h4, .page-content h4, .elementor h4, .rw-content h4 { font-size: 1.2rem; }
+}
+
+
 /* Design tokens for spacing + colours */
 .rw-content {
   --rw-space: 1.25rem;
@@ -28,8 +121,8 @@ Version: 1.0.0
   --rw-body: #4a4a4a;
 
   /* Body font inside content */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-  font-size: 17px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif !important;
+  font-size: 16px;
   line-height: 1.75;
   color: var(--rw-body);
 }
