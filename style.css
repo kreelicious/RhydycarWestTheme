@@ -52,6 +52,69 @@ li {
   }
 }
 
+/* ================================
+   Typography Spacing System
+   ================================ */
+
+:root {
+  --space: 1.25rem;
+}
+
+/* Paragraphs */
+p {
+  margin: 0 0 var(--space) 0;
+}
+
+/* Headings – consistent rhythm */
+h1 {
+  margin: 0 0 calc(var(--space) * 1.5) 0;
+}
+
+h2 {
+  margin: calc(var(--space) * 2) 0 var(--space) 0;
+}
+
+h3 {
+  margin: calc(var(--space) * 1.75) 0 calc(var(--space) * 0.75) 0;
+}
+
+h4 {
+  margin: calc(var(--space) * 1.25) 0 calc(var(--space) * 0.5) 0;
+}
+
+/* Reduce margin when headings follow headings */
+h1 + h2,
+h2 + h3,
+h3 + h4 {
+  margin-top: var(--space);
+}
+
+/* Reduce gap when heading is followed immediately by text */
+h1 + p,
+h2 + p,
+h3 + p {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+
+  :root {
+    --space: 1rem;
+  }
+
+  h1 {
+    margin-bottom: calc(var(--space) * 1.25);
+  }
+
+  h2 {
+    margin-top: calc(var(--space) * 1.5);
+  }
+
+  h3 {
+    margin-top: calc(var(--space) * 1.25);
+  }
+}
+
 
 /* PLAN CONTAINER */
 .plan-container {
