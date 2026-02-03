@@ -20,7 +20,6 @@ h1, h2, h3, h4 {
 body,
 p,
 li {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 17px;
   line-height: 1.7;
   color: #4a4a4a;
@@ -38,11 +37,11 @@ li {
   }
 
   h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
 
   h4 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   body,
