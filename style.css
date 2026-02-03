@@ -15,7 +15,7 @@ Version: 1.0.0
 /* Optional: ensure Rhydycar font-face is valid (weight must be numeric) */
 @font-face {
   font-family: 'Rhydycar';
-  src: url('../NiveauGroteskBold.ttf') format('truetype');
+  src: url('fonts/NiveauGroteskBold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
