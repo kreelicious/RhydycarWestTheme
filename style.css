@@ -29,7 +29,6 @@ Version: 1.0.0
 :root {
   --rw-space: 1.25rem;
   --rw-heading: #202b5d;
-  --rw-body: #4a4a4a;
 }
 
 /* 1) Force body font + base rhythm in content areas */
