@@ -733,3 +733,63 @@ table.distance-to-site {
 .wrap_ova_header .ovatheme_breadcrumbs {
   text-align: center;
 }
+
+/* ================================
+   Monument Ordered List
+   ================================ */
+
+.monument-list {
+  --ml-bg: #f7f9fb;
+  --ml-border: #e5e7eb;
+  --ml-text: #374151;
+  --ml-number-bg: #365267;
+  --ml-number-text: #ffffff;
+
+  background: var(--ml-bg);
+  border: 1px solid var(--ml-border);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+/* Remove default OL padding/margins and use a custom counter */
+.monument-list ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: monument;
+}
+
+/* Each item becomes a neat row */
+.monument-list li {
+  counter-increment: monument;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--ml-border);
+
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ml-text);
+}
+
+/* Remove border on last item */
+.monument-list li:last-child {
+  border-bottom: 0;
+}
+
+/* Number badge */
+.monument-list li::before {
+  content: counter(monument);
+  flex: 0 0 auto;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--ml-number-bg
