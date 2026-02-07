@@ -821,3 +821,56 @@ table.distance-to-site {
     font-size: 0.7rem;
   }
 }
+.rw-zoom-hero{
+  position: relative;
+  min-height: clamp(420px, 70vh, 760px);
+  overflow: hidden;
+  border-radius: 18px; /* optional */
+}
+
+.rw-zoom-hero__bg{
+  position:absolute; inset:0;
+  background-image: url('/wp-content/uploads/your-path/Rhydycar_West_Main.jpg'); /* swap to your actual URL */
+  background-repeat:no-repeat;
+  background-size: 100%;
+  background-position: 50% 50%;
+  transform: scale(1.02); /* tiny punch */
+  will-change: background-position, background-size, opacity;
+  transition:
+    background-position 1400ms cubic-bezier(.22,.61,.36,1),
+    background-size 1400ms cubic-bezier(.22,.61,.36,1),
+    opacity 500ms ease;
+}
+
+.rw-zoom-hero__overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.55) 100%);
+}
+
+.rw-zoom-hero__content{
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  padding: clamp(24px, 5vw, 56px);
+  color: #fff;
+}
+
+.rw-zoom-hero__content h1{
+  margin: 0 0 10px;
+}
+
+.rw-zoom-hero__content p{
+  margin: 0;
+  max-width: 58ch;
+}
+
+.rw-zoom-hero.is-zoomed .rw-zoom-hero__bg{
+  background-size: var(--rwZoomScale, 220%);
+  background-position: var(--rwZoomX, 73%) var(--rwZoomY, 37%);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .rw-zoom-hero__bg{
+    transition: none !important;
+  }
+}
