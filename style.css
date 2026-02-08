@@ -821,6 +821,8 @@ table.distance-to-site {
     font-size: 0.7rem;
   }
 }
+/* Zoon Hero */
+
 .rw-zoom-hero{
   position: relative;
   min-height: clamp(420px, 70vh, 760px);
@@ -844,7 +846,6 @@ table.distance-to-site {
 
 .rw-zoom-hero__overlay{
   position:absolute; inset:0;
-  background: linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.55) 100%);
 }
 
 .rw-zoom-hero__content{
